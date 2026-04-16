@@ -1,0 +1,41 @@
+import java.util.ArrayList;
+
+public class Course {
+   
+    Private String courseName:
+    Private int maxSeats;
+    Private ArrayList<String> registeredStudents;
+
+    public Course(String courseName, int maxSeats) { 
+        this.courseName = courseName;
+        this.maxSeats = maxSeats;
+        This.registeredStudents = new ArrayList<>();
+}
+
+    public void registerStudent(String studentName) { 
+        if (registeredStudents.size() < maxSeats) {
+            registeredStudnets.add(studentName);
+            System.out.println(studentName + " registered successfully.");
+        } else {
+            System.out.println("Course is full.");
+        }
+    }
+
+    public void drop student(String studentName) {
+        if (registeredStudents.contains(studentName)) { 
+            registeredStudent.remove(stuudentName);
+            System.out.println(studentName + "dropped successfully.");
+        } else {
+            System.out.println ("Student not found in this course.");
+        }
+
+    public void displayCourseDetails() {
+        System.out.println("\nCourse Name: " + courseName);
+        System.out.println("Max Seats: " + max Seats);
+        System.out.println("Students: " + registeredStudents);
+    } 
+
+    public String getCourseName() { 
+        return courseName;
+    }
+}
