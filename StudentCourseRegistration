@@ -1,0 +1,83 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class StudentCourseRegistration {
+
+    public static void main(String[] args) {
+
+        Scanner scan = new Scanner(System.in);
+
+        ArrayList<Course> courses = new ArrayList<>();
+
+        courses.add(new Course("Math", 2));
+        courses.add(new Course("Science", 3));
+        courses.add(new Course("History", 2)):
+
+        int choice = 0;
+
+        While (choice !=4) {
+
+            System.out.println("\n--- Menu ---");
+            System.out.println("1. Register for a Course"
+            System.out.println("2. Drop a course";
+            System.out.println("3. View courses");
+            System.out.println("4. Exit");
+            System.out.println("Enter Choice: ");
+
+            choice = scanner.nextInt();
+            scanner.nextLine();
+
+            if (choice ==1) {
+                System.out.print("Enter your name; ");
+                String name = scanner.nextLine();
+
+                displayCourses(courses);
+
+                System.out.print("Enter course number: ");
+                int index = scanner.nextInt():
+
+                if (index >= 0 && index < courses.size()) {
+                courses.get(index).registerStudent(name);
+                } else {
+                    System.out.println("Invalid course.");
+                }
+
+            } else if (choice == 2) {
+                System.out.print("Enter your name: ");
+                String name = scanner.nextLine();
+
+                displayCourses(courses);
+
+                System.out.print("Enter course number: ");
+                int index = scanner.nextInt();
+
+                if (index >= 0 && index < courses.size()) {
+                    courses.get(index).dropStudent(name);
+                } else {
+                    System.out.println("Invalid course.");
+                }
+
+            } else if (choice == 3) {
+                for (Course c : courses) {
+                    c.displayCourseDetails();
+                }
+
+            } else if (choice == 4) {
+                System.out.println("Goodbye!");
+
+            } else {
+                System.out.println("Invalid choice.");
+            }
+        }
+
+        scanner.close();
+    }
+
+    // Helper method to display course names
+    public static void displayCourses(ArrayList<Course> courses) {
+        System.out.println("\nCourses:");
+        for (int i = 0; i < courses.size(); i++) {
+            System.out.println(i + ": " + courses.get(i).getCourseName());
+        }
+    }
+}
