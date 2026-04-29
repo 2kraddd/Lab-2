@@ -73,7 +73,6 @@ public class StudentCourseRegistration {
         scanner.close();
     }
 
-    // Helper method to display course names
     public static void displayCourses(ArrayList<Course> courses) {
         System.out.println("\nCourses:");
         for (int i = 0; i < courses.size(); i++) {
